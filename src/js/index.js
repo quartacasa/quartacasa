@@ -31,6 +31,14 @@ $(document).ready(function () {
     $('.open-menu').addClass('active');
   });
 
+  $(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 80) {
+      $('header').addClass('fixed');
+    } else {
+      $('header').removeClass('fixed');
+    }
+  });
+
   var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,

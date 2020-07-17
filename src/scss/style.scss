@@ -18,60 +18,131 @@ $color-blue-1: #263BFF;
 h3 {
   font-size: 24px;
   margin: 10px 0;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 45px;
+  }
 }
 
 header {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 
-  h1 {
-    position: relative;
-    z-index: 2;
-  }
-
-  .close-menu,
-  .open-menu {
-    display: none;
-    position: relative;
-    z-index: 2;
-
-    &.active {
-      display: block;
-    }
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    background: #ffffff;
-    width: 100vw;
-    height: 100vh;
-    top: 0px;
-    left: 0;
+  >div {
     padding: 20px;
-    padding-top: 100px;
-    transform: translate(100%, 0%);
-    transition: all .2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
 
-    &.active {
-      display: block;
-      transform: translate(0%, 0%);
+    @media screen and (min-width: 768px) {
+      width: 90%;
     }
 
-    a {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      display: block;
-      color: $color-black-1;
+    @media screen and (min-width: 1024px) {
+      align-items: initial
     }
+
+    @media screen and (min-width: 1440px) {
+      padding: 20px 0;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+    }
+
+    .close-menu,
+    .open-menu {
+      display: none;
+      position: relative;
+      z-index: 2;
+
+      &.active {
+        display: block;
+
+        @media screen and (min-width: 1024px) {
+          display: none;
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      background: #ffffff;
+      width: 100vw;
+      height: 100vh;
+      top: 0px;
+      left: 0;
+      padding: 20px;
+      padding-top: 100px;
+      transition: all .2s;
+
+      @media screen and (min-width: 768px) {
+        padding: 10% 8%;
+      }
+
+      @media screen and (min-width: 1024px) {
+        display: block;
+        background: none;
+        width: auto;
+        height: auto;
+        padding: 12px 0;
+        position: initial !important;
+        margin: 0 0;
+
+        ul {
+          display: flex;
+        }
+
+        .contact-header {
+          background: blue;
+          color: #fff;
+          padding: 10px 30px;
+          border-radius: 13px;
+          margin-top: -10px;
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+
+      a {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        display: block;
+        color: $color-black-1;
+
+        @media screen and (min-width: 1024px) {
+          margin: 0 10px;
+          font-size: 16px;
+        }
+      }
+    }
+
+  }
+
+  &.hide-menu {
+    opacity: 0;
+  }
+
+  &.fixed {
+    background: rgba(255, 255, 255, .9);
+    transition: all .5s;
   }
 }
 
 .hero {
-  padding: 0 20px;
+  padding: 80px 20px 0;
   margin-bottom: 50px;
 
   &:before {
@@ -92,6 +163,10 @@ header {
     font-size: $font-title-2;
     color: $color-black-1;
     margin: 20px 0 10px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 34px;
+    }
   }
 
   p {
@@ -115,6 +190,38 @@ header {
 
     &:before {
       background-image: url(../img/hero-shape-desktop.svg);
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .hero-content {
+      align-items: center;
+      justify-content: space-between;
+
+      >div {
+        width: 45%;
+      }
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+
+    h2 {
+      font-size: 50px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 35px;
     }
   }
 }
@@ -185,6 +292,14 @@ header {
       text-decoration: underline;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    .step-text--description {
+      width: 90%;
+      font-size: 20px;
+      line-height: 35px;
+    }
+  }
 }
 
 .new-business {
@@ -217,6 +332,34 @@ header {
       background-position: 0;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .new-business-content {
+      align-items: center;
+      justify-content: space-between;
+
+      .step-text {
+        width: 45%;
+      }
+
+      >img {
+        width: 50%;
+      }
+    }
+
+    &:before {
+      max-width: 60%;
+      max-height: 100%;
+      background-position: 60px 40px;
+    }
+  }
+
+  @media screen and (min-width: 1480px) {}
 }
 
 .digital-transition {
@@ -248,6 +391,30 @@ header {
       >img {
         position: relative;
         z-index: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    &:before {
+      max-width: 60%;
+      max-height: 100%;
+      background-position: 60px 40px;
+    }
+
+    .digital-transition-content {
+      >div {
+        width: 45%;
+      }
+
+      >img {
+        width: 50%;
       }
     }
   }
@@ -288,6 +455,32 @@ header {
       >img {
         position: relative;
         z-index: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      max-width: 60%;
+      max-height: 100%;
+      background-position: 60px 40px;
+    }
+
+    .personal-development-content {
+      align-items: center;
+      justify-content: space-between;
+
+      >div {
+        width: 45%;
+      }
+
+      >img {
+        width: 50%;
       }
     }
   }
@@ -387,6 +580,32 @@ header {
       }
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    &:before {
+      max-width: 60%;
+      max-height: 100%;
+      background-position: 60px 40px;
+    }
+
+    .case {
+      align-items: center;
+
+      >div {
+        width: 45%;
+      }
+
+      >img {
+        width: 50%;
+      }
+    }
+  }
 }
 
 .our-products {
@@ -397,6 +616,10 @@ header {
 
   h3 {
     margin: 30px 0;
+
+    @media screen and (min-width: 1440px) {
+      margin: 80px 0;
+    }
   }
 
   .product-card {
@@ -498,7 +721,30 @@ header {
     @media screen and (min-width: 768px) {
       width: 60%;
     }
+
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+      margin-bottom: 30px;
+    }
   }
+
+  @media screen and (min-width: 1024px) {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 50px;
+    }
+
+    &:before {
+      max-width: 100%;
+      max-height: 100%;
+      width: 50%;
+      background-position: 0 -20px;
+    }
+  }
+
 }
 
 .who-we-are {
@@ -520,6 +766,15 @@ header {
     background-position: 0px 0;
     max-width: 300px;
     max-height: 450px;
+
+    @media screen and (min-width: 1024px) {
+      background-image: url(../img/quem-somos-shape-desktop.svg);
+      width: 100%;
+      height: 100%;
+      background-position: -350px 0;
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   li {
@@ -530,6 +785,10 @@ header {
     @media screen and (min-width: 768px) {
       width: 50%;
       margin: 0 auto 50px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 30%;
     }
   }
 
@@ -552,6 +811,21 @@ header {
     line-height: 28px;
     margin-top: 20px;
     color: $color-gray-1;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    padding-bottom: 50px;
+    height: 100vh;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 50px;
+    }
+
+    ul {
+      display: flex;
+    }
   }
 }
 
@@ -590,6 +864,10 @@ header {
     font-size: 16px;
     margin-bottom: 15px;
     outline: none;
+
+    &.error {
+      border: 2px solid #f00;
+    }
   }
 
   textarea {
@@ -601,6 +879,12 @@ header {
     border-radius: 13px;
     height: 110px;
     margin-bottom: 15px;
+    outline: none;
+    color: #ffffff;
+
+    &.error {
+      border: 2px solid #f00;
+    }
   }
 
   button {
@@ -612,6 +896,11 @@ header {
     font-size: 16px;
     color: $color-blue-1;
     font-weight: 600;
+
+    &:hover {
+      background: #000d87;
+      color: #ffffff;
+    }
   }
 
   .contact-content {
@@ -631,6 +920,53 @@ header {
   ::placeholder {
     color: #ffffff;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+    &:before {
+      content: '';
+      background-image: url(../img/contact-shape.svg);
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-repeat: no-repeat;
+      left: 0;
+      background-position: -100px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-text {
+      width: 60%;
+
+      .contact-description {
+        width: 80%;
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+
+    .contact-form {
+      width: 50%;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          width: 48%;
+        }
+      }
+    }
+  }
 }
 
 footer {
@@ -644,7 +980,6 @@ footer {
   li {
     text-align: center;
     margin-bottom: 30px;
-
   }
 
   a {
@@ -675,10 +1010,10 @@ footer {
 
         li {
           margin: 0;
-          margin-left: 10px;
+          margin-left: 30px;
 
           a {
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 100;
           }
         }
@@ -689,6 +1024,7 @@ footer {
 
 .container {
   @media screen and (min-width: 768px) {
+    max-width: 1280px;
     width: 90%;
     margin: 0 auto;
   }

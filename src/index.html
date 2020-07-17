@@ -13,37 +13,39 @@
 </head>
 
 <body>
-  <header>
-    <h1>
-      <a href='#'>
-        <img src="./img/logo.svg" alt="Logo Quarta Casa">
-      </a>
-    </h1>
+  <header class="header">
+    <div>
+      <h1>
+        <a href='#hero'>
+          <img src="./img/logo.svg" alt="Logo Quarta Casa">
+        </a>
+      </h1>
 
-    <span class='open-menu active'><img src="img/menu-icon.svg" alt=""></span>
-    <span class='close-menu'><img src="img/close-icon.svg" alt=""></span>
-    <nav class='menu'>
-      <ul>
-        <li>
-          <a href="#new-business">Novos Negócios</a>
-        </li>
-        <li>
-          <a href="#digital-transition">Transformação Digital</a>
-        </li>
-        <li>
-          <a href="#personal-development">Desenvolvimento Pessoal</a>
-        </li>
-        <li>
-          <a href="#who-we-are">Quem Somos</a>
-        </li>
-        <li>
-          <a href="#contact">Contato</a>
-        </li>
-      </ul>
-    </nav>
+      <span class='open-menu active'><img src="img/menu-icon.svg" alt=""></span>
+      <span class='close-menu'><img src="img/close-icon.svg" alt=""></span>
+      <nav class='menu'>
+        <ul>
+          <li>
+            <a href="#new-business">Novos Negócios</a>
+          </li>
+          <li>
+            <a href="#digital-transition">Transformação Digital</a>
+          </li>
+          <li>
+            <a href="#personal-development">Desenvolvimento Pessoal</a>
+          </li>
+          <li>
+            <a href="#who-we-are">Quem Somos</a>
+          </li>
+          <li>
+            <a href="#contact" class='contact-header'>Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero">
+  <div class="hero" id='hero'>
     <div class='container'>
       <div class='hero-content'>
         <div>
@@ -315,8 +317,8 @@
   <div class='contact' id='contact'>
     <div class='container'>
       <div class='contact-content'>
-        <div>
-          <p>we feel you</p>
+        <div class='contact-text'>
+          <p class='contact-text--subtitle'>we feel you</p>
           <h3>Ficaremos felizes<br /> em falar com você</h3>
           <p class='contact-description'>Somos elo entre inovação e humanização. Através da empatia, desenvolvemos novos
             produtos, cocriamos negócios, e
@@ -324,25 +326,33 @@
           <strong>(xx) 99191-9191 | contato@quartacasa.com.br</strong>
           <ul>
             <li>
-              <img src="img/facebook.svg" alt="Facebook">
+              <a href="#">
+                <img src="img/facebook.svg" alt="Facebook">
+              </a>
             </li>
 
             <li>
-              <img src="img/instagram.svg" alt="Instagram">
+              <a href="">
+                <img src="img/instagram.svg" alt="Instagram">
+              </a>
             </li>
 
             <li>
-              <img src="img/linkedin.svg" alt="Linkedin">
+              <a href="">
+                <img src="img/linkedin.svg" alt="Linkedin">
+              </a>
             </li>
           </ul>
         </div>
 
-        <div>
+        <div class='contact-form'>
           <form action="">
-            <input type="text" placeholder="Seu nome">
+            <input class='error' type="text" placeholder="Seu nome">
             <input type="text" placeholder="Seu e-mail">
-            <input type="text" placeholder="Telefone">
-            <input type="text" placeholder="Qual pilar precisa?">
+            <div>
+              <input type="text" placeholder="Telefone">
+              <input type="text" placeholder="Qual pilar precisa?">
+            </div>
             <textarea name="" id="" cols="30" rows="10" placeholder="Seu comentário"></textarea>
             <button>Enviar</button>
           </form>
@@ -357,23 +367,23 @@
         <nav>
           <ul>
             <li>
-              <a href="#">Novos Negócios</a>
+              <a href="#new-business">Novos Negócios</a>
             </li>
             <li>
-              <a href="#">Transformação Digital</a>
+              <a href="#digital-transition">Transformação Digital</a>
             </li>
             <li>
-              <a href="#">Desenvolvimento Pessoal</a>
+              <a href="#personal-development">Desenvolvimento Pessoal</a>
             </li>
             <li>
-              <a href="#">Quem Somos</a>
+              <a href="#who-we-are">Quem Somos</a>
             </li>
             <li>
-              <a href="#">Contato</a>
+              <a href="#contact">Contato</a>
             </li>
           </ul>
         </nav>
-        <a href='#' class='logo'>
+        <a href='#hero' class='logo'>
           <img src='img/white-logo.svg' alt='Logo Quarta casa' />
         </a>
       </div>
