@@ -635,13 +635,17 @@ header {
   .product-card {
     padding: 50px 20px 20px;
     margin-bottom: 20px;
-    background-image: url(../img/produto-imagem1.jpg);
+    background-image: url(https://wavemob.com.br/images/antena-2.jpeg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     height: 480px;
     display: flex;
     flex-direction: column;
     position: relative;
+
+    img {
+      border-radius: 13px;
+    }
 
     &.product-2 {
       background-image: url(../img/produto-imagem2.jpg);
