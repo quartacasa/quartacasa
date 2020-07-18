@@ -1,6 +1,12 @@
 $(document).ready(function () {
-  $("a").on('click', function (event) {
+  // Fix header background color bug when refresh page
+  if ($(window).scrollTop() > 80) {
+    $('header').addClass('fixed');
+  } else {
+    $('header').removeClass('fixed');
+  }
 
+  $("a").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();
 
