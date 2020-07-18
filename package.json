@@ -20,6 +20,8 @@
     "node-sass": "^4.11.0"
   },
   "dependencies": {
-    "google-spreadsheet": "^3.0.11"
+    "encoding": "^0.1.13",
+    "google-spreadsheet": "^3.0.11",
+    "lodash": "^4.17.19"
   }
 }
