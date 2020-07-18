@@ -914,7 +914,7 @@ header {
 
   button {
     width: 100%;
-    border: 2px;
+    border: solid 2px $color-blue-1;
     padding: 15px;
     background: #fff;
     border-radius: 13px;
@@ -925,9 +925,9 @@ header {
 
     &:hover {
       background: transparent;
-      color: #ffffff;
+      color: #fff;
       cursor: pointer;
-      border: solid 2px #fff;
+      border-color: #fff;
     }
   }
 
