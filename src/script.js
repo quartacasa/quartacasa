@@ -6,6 +6,34 @@ $(document).ready(function () {
     $('header').removeClass('fixed');
   }
 
+  $('[data-js="contact-form"]').submit(function(evt) {
+    evt.preventDefault();
+
+    $name = $('[data-js="input-name"]');
+    $email = $('[data-js="input-email"]');
+    $phone = $('[data-js="input-phone"]');
+    $message = $('[data-js="input-message"]');
+
+    var payload = {
+      name: $name.val(),
+      email: $email.val(),
+      phone: $phone.val(),
+      message: $message.val()
+    };
+
+    var url = "https://quartacasa-functions.netlify.app/.netlify/functions/populate-spreadsheet";
+    var table = "1fWAEdEgX9Rgj9sVbcVRJz8KPQM42viVRUlu938WBdoY";
+
+    axios
+      .post(url, { id: table, row: payload })
+      .then(function() {
+        console.info("Informação enviada com sucesso.");
+      })
+      .catch(function(err) {
+        console.error(err);
+      })
+  });
+
   $("a").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();
