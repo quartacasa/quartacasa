@@ -1,18 +1,15 @@
 {
-  "name": "teste",
+  "name": "quartacasa",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Guilherme Paixão <guiferpa@gmail.com>",
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
     "node-sass": "^4.11.0"
-  },
-  "dependencies": {},
-  "description": ""
+  }
 }
