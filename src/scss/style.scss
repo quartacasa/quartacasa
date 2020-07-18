@@ -103,11 +103,17 @@ header {
         }
 
         .contact-header {
-          background: blue;
+          background: #263bff;
           color: #fff;
           padding: 10px 30px;
+          border: solid 2px #263bff;
           border-radius: 13px;
           margin-top: -10px;
+
+          &:hover {
+            background: transparent;
+            color: #263bff;
+          }
         }
       }
 
@@ -635,7 +641,6 @@ header {
 
     &.product-2 {
       background-image: url(../img/produto-imagem2.jpg);
-
     }
 
     >div {
@@ -669,6 +674,11 @@ header {
       right: 0;
       margin: auto;
       width: 160px;
+
+      &:hover {
+        background: #fff;
+        color: #263238;
+      }
     }
   }
 }
@@ -889,17 +899,20 @@ header {
 
   button {
     width: 100%;
-    border: none;
+    border: 2px;
     padding: 15px;
     background: #fff;
     border-radius: 13px;
     font-size: 16px;
     color: $color-blue-1;
     font-weight: 600;
+    box-sizing: border-box;
 
     &:hover {
-      background: #000d87;
+      background: transparent;
       color: #ffffff;
+      cursor: pointer;
+      border: solid 2px #fff;
     }
   }
 
