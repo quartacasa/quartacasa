@@ -46,7 +46,7 @@ header {
     }
 
     @media screen and (min-width: 1024px) {
-      align-items: initial
+      align-items: center;
     }
 
     @media screen and (min-width: 1440px) {
@@ -56,6 +56,10 @@ header {
     h1 {
       position: relative;
       z-index: 2;
+
+      a {
+        display: block;
+      }
     }
 
     .close-menu,
@@ -100,6 +104,7 @@ header {
 
         ul {
           display: flex;
+          align-items: center;
         }
 
         .contact-header {
@@ -108,7 +113,6 @@ header {
           padding: 10px 30px;
           border: solid 2px #263bff;
           border-radius: 13px;
-          margin-top: -10px;
 
           &:hover {
             background: transparent;
