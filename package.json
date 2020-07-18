@@ -2,8 +2,11 @@
   "name": "quartacasa",
   "version": "1.0.0",
   "scripts": {
-    "start": "gulp serve",
-    "build": "gulp"
+    "serve:site": "gulp serve",
+    "build:site": "gulp",
+    "serve:functions": "netlify-lambda serve src/functions",
+    "build:functions": "netlify-lambda build src/functions",
+    "build": "npm run build:site && npm run build:functions"
   },
   "author": "Guilherme Paixão <guiferpa@gmail.com>",
   "devDependencies": {
@@ -13,6 +16,10 @@
     "gulp-open": "^3.0.1",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
+    "netlify-lambda": "^2.0.0",
     "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "google-spreadsheet": "^3.0.11"
   }
 }
