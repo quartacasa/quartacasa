@@ -21,7 +21,7 @@ $(document).ready(function () {
       message: $message.val()
     };
 
-    var url = "https://quartacasa-functions.netlify.app/.netlify/functions/populate-spreadsheet";
+    var url = "/.netlify/functions/populate-spreadsheet";
     var table = "1fWAEdEgX9Rgj9sVbcVRJz8KPQM42viVRUlu938WBdoY";
 
     axios
