@@ -2,12 +2,15 @@
   "name": "quartacasa",
   "version": "1.0.0",
   "scripts": {
+    "start": "gulp serve",
     "build": "gulp"
   },
   "author": "Guilherme Paixão <guiferpa@gmail.com>",
   "devDependencies": {
+    "browser-sync": "^2.26.10",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
+    "gulp-open": "^3.0.1",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.11.0"

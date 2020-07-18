@@ -1,8 +1,11 @@
 "use strict";
 
+const os = require('os');
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify")
+const open = require('gulp-open');
+const sync = require('browser-sync').create();
 
 sass.compiler = require("node-sass"); // It's necessary for gulp-sass works
 
@@ -45,5 +48,15 @@ gulp.task('html', () => {
 });
 
 gulp.task('build', gulp.series('css', 'js', 'jpg', 'png', 'svg', 'html'));
+
+gulp.task('build:watch', () => {
+  sync.init({ server: 'dist' });
+
+  gulp.watch("src/**/*.scss", gulp.series('css')).on("change", sync.reload);
+  gulp.watch("src/**/*.js", gulp.series('js')).on("change", sync.reload);
+  gulp.watch("src/index.html", gulp.series('html')).on("change", sync.reload);
+});
+
+gulp.task('serve', gulp.series('build', 'build:watch'));
 
 gulp.task('default', gulp.series('build'));
