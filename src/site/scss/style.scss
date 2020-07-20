@@ -7,6 +7,10 @@
   list-style-type: none;
 }
 
+button[type="submit"]:disabled {
+  opacity: .6;
+}
+
 $font-title-2: 28px;
 
 $color-black-1: #232323;
@@ -114,7 +118,7 @@ header {
           border: solid 2px #263bff;
           border-radius: 13px;
 
-          &:hover {
+          &:hover:not(:disabled) {
             background: transparent;
             color: #263bff;
           }
@@ -923,7 +927,7 @@ header {
     font-weight: 600;
     box-sizing: border-box;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: transparent;
       color: #fff;
       cursor: pointer;
@@ -985,7 +989,7 @@ header {
     .contact-form {
       width: 50%;
 
-      div {
+      .split {
         display: flex;
         justify-content: space-between;
 
@@ -1056,4 +1060,50 @@ footer {
     width: 90%;
     margin: 0 auto;
   }
+}
+
+.feedback {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 18px 15px;
+  border-radius: 13px;
+  border: solid 2px $color-blue-1;
+  box-sizing: border-box;
+  margin: 10px 0;
+  background-color: #fff;
+  color: $color-blue-1;
+
+
+  .fa-times {
+    color: #ccc;
+    margin-left: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  &--success {
+    border-color: green;
+    color: green;
+
+  }
+
+  &--failure {
+    border-color: red;
+    color: red;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.feedback-message {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
 }

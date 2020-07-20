@@ -6,8 +6,32 @@ $(document).ready(function () {
     $('header').removeClass('fixed');
   }
 
-  $('[data-js="contact-form"]').submit(function(evt) {
+  var $failureFeedback = $('[data-js="failure-feedback"]');
+  $failureFeedback.children('i.fa-times').click(function() {
+    $failureFeedback.prop("style", "display: none !important;");
+  });
+
+  var $successFeedback = $('[data-js="success-feedback"]');
+  $successFeedback.children('i.fa-times').click(function() {
+    $successFeedback.prop("style", "display: none !important;");
+  });
+
+  var submitLoading = [
+    '<i class="fas fa-circle-notch fa-pulse"',
+        'style="margin-right: 10px;">',
+    '</i> Enviando'
+  ].join("");
+
+  var submitLoaded = "Enviar";
+
+  var form = $('[data-js="contact-form"]');
+  form.submit(function(evt) {
     evt.preventDefault();
+
+    $submit = $('[data-js="contact-form-submit"]');
+
+    $submit.prop('disabled', true);
+    $submit.html(submitLoading);
 
     $name = $('[data-js="input-name"]');
     $email = $('[data-js="input-email"]');
@@ -25,13 +49,21 @@ $(document).ready(function () {
     var table = "1fWAEdEgX9Rgj9sVbcVRJz8KPQM42viVRUlu938WBdoY";
 
     axios
-      .post(url, { id: table, row: payload })
+      .get(url, { id: table, row: payload })
       .then(function() {
-        console.info("Informação enviada com sucesso.");
+        $submit.prop('disabled', false);
+        $submit.html(submitLoaded);
+
+        $successFeedback.prop("style", "display: block;");
       })
       .catch(function(err) {
         console.error(err);
-      })
+
+        $submit.prop('disabled', false);
+        $submit.html(submitLoaded);
+
+        $failureFeedback.prop("style", "display: block;");
+      });
   });
 
   $("a").on('click', function (event) {

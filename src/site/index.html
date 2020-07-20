@@ -10,6 +10,10 @@
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/solid.min.css">
   <link rel="icon" href="img/favicon.png" />
 </head>
 
@@ -242,12 +246,30 @@
         <div class='contact-form'>
           <form data-js="contact-form">
             <input type="text" data-js="input-name" placeholder="Seu nome">
-            <div>
+            <div class="split">
               <input type="email" data-js="input-email" placeholder="Seu e-mail">
               <input type="text" data-js="input-phone" placeholder="Telefone">
             </div>
             <textarea cols="30" rows="10" data-js="input-message" placeholder="Sua mensagem"></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" data-js="contact-form-submit">
+              Enviar
+            </button>
+            <div  data-js="success-feedback" class="feedback feedback--success"
+              style="display: none !important;">
+              <div class="feedback-message">
+                <i class="fa fa-check"></i>
+                Recebemos sua mensagem
+              </div>
+              <i class="fa fa-times"></i>
+            </div>
+            <div data-js="failure-feedback" class="feedback feedback--failure"
+              style="display: none !important;">
+              <div class="feedback-message">
+                <i class="fa fa-times-circle"></i>
+                Não conseguimos receber sua mensagem
+              </div>
+              <i class="fa fa-times"></i>
+            </div>
           </form>
         </div>
       </div>
