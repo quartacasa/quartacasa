@@ -49,7 +49,7 @@ $(document).ready(function () {
     var table = "1fWAEdEgX9Rgj9sVbcVRJz8KPQM42viVRUlu938WBdoY";
 
     axios
-      .get(url, { id: table, row: payload })
+      .post(url, { id: table, row: payload })
       .then(function() {
         $submit.prop('disabled', false);
         $submit.html(submitLoaded);
