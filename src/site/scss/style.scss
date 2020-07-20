@@ -1065,6 +1065,9 @@ footer {
 .who-we-are-text {
   font-size: 22px;
   padding: 20px 0;
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
 }
 
 .feedback {
