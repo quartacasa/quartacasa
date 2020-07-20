@@ -777,10 +777,11 @@ header {
 }
 
 .who-we-are {
-  padding: 50px 20px 0;
+  padding: 50px 20px;
   text-align: center;
   color: $color-black-2;
   position: relative;
+  height: 100vh;
 
   &:before {
     content: '';
@@ -795,6 +796,7 @@ header {
     background-position: 0px 0;
     max-width: 300px;
     max-height: 450px;
+    z-index: -999;
 
     @media screen and (min-width: 1024px) {
       background-image: url(../img/quem-somos-shape-desktop.svg);
@@ -838,14 +840,12 @@ header {
 
   p {
     line-height: 28px;
-    margin-top: 20px;
     color: $color-gray-1;
   }
 
   @media screen and (min-width: 1024px) {
     display: flex;
     padding-bottom: 50px;
-    height: 100vh;
     align-items: center;
 
     h3 {
@@ -1062,6 +1062,11 @@ footer {
   }
 }
 
+.who-we-are-text {
+  font-size: 24px;
+  padding: 20px 0;
+}
+
 .feedback {
   display: flex !important;
   align-items: center;
@@ -1074,7 +1079,6 @@ footer {
   margin: 10px 0;
   background-color: #fff;
   color: $color-blue-1;
-
 
   .fa-times {
     color: #ccc;
