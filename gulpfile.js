@@ -41,13 +41,19 @@ gulp.task('jpg', () => {
     .pipe(gulp.dest('dist/site/img'));
 });
 
+gulp.task('jpeg', () => {
+  return gulp
+    .src("src/site/img/**/*.jpeg")
+    .pipe(gulp.dest('dist/site/img'));
+});
+
 gulp.task('html', () => {
   return gulp
     .src("src/site/index.html")
     .pipe(gulp.dest('dist/site'));
 });
 
-gulp.task('build', gulp.series('css', 'js', 'jpg', 'png', 'svg', 'html'));
+gulp.task('build', gulp.series('css', 'js', 'jpeg', 'jpg', 'png', 'svg', 'html'));
 
 gulp.task('build:watch', () => {
   sync.init({ server: 'dist/site' });
